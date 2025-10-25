@@ -25,7 +25,7 @@ public class ProductsController : ControllerBase
         return Ok(products);
     }
 
-    [HttpGet("{id:int}")]
+    [HttpGet("{id:int}", Name = "GetProductById")]
     public async Task<ActionResult<Product>> GetByIdAsync(int id)
     {
         var product = await _repository.GetByIdAsync(id);
@@ -54,7 +54,7 @@ public class ProductsController : ControllerBase
 
         var created = await _repository.CreateAsync(product);
 
-        return CreatedAtAction(nameof(GetByIdAsync), new { id = created.Id }, created);
+        return CreatedAtRoute("GetProductById", new { id = created.Id }, created);
     }
 
     [HttpPut("{id:int}")]
