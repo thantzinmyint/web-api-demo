@@ -48,3 +48,7 @@ The workflow defined in `.github/workflows/dotnet-ci.yml` runs on pushes/pull re
 ## Next Steps
 - Add automated tests (unit and/or integration) under a new test project
 - Extend the API with pagination or search if required
+
+## Local via Microk8s
+Microk8s: https://microk8s.io/#install-microk8s
+Local Dashboard: https://192.168.2.2:10443/#/workloads?namespace=default
